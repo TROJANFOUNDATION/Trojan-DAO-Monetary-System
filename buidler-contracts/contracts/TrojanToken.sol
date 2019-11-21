@@ -1,58 +1,9 @@
 pragma solidity ^0.5.11;
 
-/**
-__                  _    _
-/ _\_ __   __ _ _ __| | _| | ___
-\ \| '_ \ / _` | '__| |/ / |/ _ \
-_\ \ |_) | (_| | |  |   <| |  __/
-\__/ .__/ \__,_|_|  |_|\_\_|\___|
-  |_|
-
-
-Sparkle is the world's first redistributive currency.
-
-Sparkle! offers an alternative to economies based on income inequality by
-creating a currency that proportionally redistributes two percent of every
-transaction to each person in the economy.
-
-Put simply: When the rich spend, the poor receive a share.
-
-Sparkle is minted via an anti-speculative system whereby the smart contract
-maintains a stable buy price of 1 ETH = 9700 SPRK and sell price of
-10000 SPRK = .97 ETH until 400,000,000 SPRK have been minted.
-
-Once 400 million Sparkle are in circulation, the buy function of this contract
-is disabled and no more SPRK will be minted until supply drops below the
-threshold. The sell function remains active to preserve a minimum value of
-10,000 SPRK equals .97 ETH.
-
-Everyone can mint Sparkle! by sending ETH to this contract.
-
-Everyone can earn ETH by selling Sparkle! to this contract.
-
-Everyone starts with free Sparkle!: by entering into the economy of Sparkle!
-you will automatically receive your share of the transaction taxes collected.
-
-Sparkle! is an activist experiment created by Micah White and released on
-September 17, 2019 to commemorate the eighth anniversary of Occupy Wall Street.
-
-SPARKLE! IS:
-
-• Autonomous — Sparkle! has no kill switch or pause function.
-
-• Adversarial — Sparkle! is an act of protest that offers an alternative.
-
-• Experimental — Sparkle! tests new economic laws that could form the basis for
-                 an activist society.
-
-• Anti-speculative — Sparkle! fights currency speculation and is backed by a
-                      verifiable reserve of ETH that guarantees as a
-                      minimum value.
-
-*/
-
-import "./lib/ERC20Detailed.sol";
 import "./lib/SafeMath.sol";
+import "./lib/IERC20.sol";
+import "./_curveIntegrals/v1/ICurveFunctions.sol";
+import "./lib/ERC20Detailed.sol";
 import "./TrojanPool.sol";
 
 contract TrojanToken is ERC20Detailed {
@@ -66,20 +17,27 @@ contract TrojanToken is ERC20Detailed {
     event Sell(address from, uint amount);
     event DaoTax(uint256 amount);
 
-    uint256 public constant MAX_SUPPLY = 400000000 * 10 ** 18; // 40000 ETH of Sparkle
-    uint256 public constant PERCENT = 100; // 100%
+    //uint256 public constant MAX_SUPPLY = 400000000 * 10 ** 18; // 40000 ETH of Sparkle
+    //uint256 public constant PERCENT = 100; // 100%
     uint256 public constant MINT_TAX = 2; // 2%
     uint256 public constant BURN_TAX = 3; // 3%
     uint256 public constant TRANSFER_TAX = 1; // 1%
-    uint256 public constant COST_PER_TOKEN = 1e14; // 1 Sparkle = .0001 ETH
+    //uint256 public constant COST_PER_TOKEN = 1e14; // 1 Sparkle = .0001 ETH
 
     uint256 private _tobinsCollected;
     uint256 private _totalSupply;
     mapping (address => uint256) private _tobinsClaimed; // Internal accounting
 
+    // Address of curve function
+    ICurveFunctions internal curveLibrary_;
+    // Underlying collateral token
+    IERC20 internal collateralToken_;
     TrojanPool trojanPool;
 
-    constructor() public ERC20Detailed("TrojanDAO", "TROJ", 18) {
+    constructor(address _curveLibrary, address _collateralToken) public ERC20Detailed("TrojanDAO", "TROJ", 18) {
+        curveLibrary_ = ICurveFunctions(_curveLibrary);
+        collateralToken_ = IERC20(_collateralToken);
+
         uint256 bootstrap = 1000 * 10 ** 18;
         // TODO: TESTING
         _balances[msg.sender] = bootstrap;
@@ -178,8 +136,8 @@ contract TrojanToken is ERC20Detailed {
     }
 
     function mintTrojan() public payable returns (bool) {
-        uint256 amount = msg.value.mul(10 ** 18).div(COST_PER_TOKEN);
-        require(_totalSupply.add(amount) <= MAX_SUPPLY, "Max supply reached");
+        //uint256 amount = msg.value.mul(10 ** 18).div(COST_PER_TOKEN);
+        //require(_totalSupply.add(amount) <= MAX_SUPPLY, "Max supply reached");
 
         uint256 taxAmount = amount.mul(MINT_TAX).div(PERCENT);
         uint256 buyerAmount = amount.sub(taxAmount);
@@ -233,6 +191,102 @@ contract TrojanToken is ERC20Detailed {
         this.approve(address(trojanPool), amount);
         trojanPool.deposit(amount);
         emit DaoTax(amount);
+    }
+
+    /**
+      * @notice This function returns the amount of tokens one can receive for a
+      *         specified amount of collateral token.
+      * @param  _collateralTokenOffered : Amount of reserve token offered for
+      *         purchase.
+      * @return uint256 : The amount of tokens once can purchase with the
+      *         specified collateral.
+      */
+    function collateralToTokenBuying(
+        uint256 _collateralTokenOffered
+    )
+        external
+        view
+        returns(uint256)
+    {
+        // Works out the inverse curve of the pool with the fee removed amount
+        return _inverseCurveIntegral(
+            _curveIntegral(totalSupply_).add(_collateralTokenOffered)
+        ).sub(totalSupply_);
+    }
+
+    /**
+      * @notice This function returns the amount of tokens needed to be burnt to
+      *         withdraw a specified amount of reserve token.
+      * @param  _collateralTokenNeeded : Amount of dai to be withdraw.
+      */
+    function collateralToTokenSelling(
+        uint256 _collateralTokenNeeded
+    )
+        external
+        view
+        returns(uint256)
+    {
+        return uint256(
+            totalSupply_.sub(
+                _inverseCurveIntegral(
+                    _curveIntegral(totalSupply_).sub(_collateralTokenNeeded)
+                )
+            )
+        );
+    }
+
+    /**
+	  * @dev	Returns the required collateral amount for a volume of bonding
+	  *			curve tokens
+	  * @param	_numTokens: The number of tokens to calculate the price of
+      * @return uint256 : The required collateral amount for a volume of bonding
+      *         curve tokens.
+      */
+    function priceToMint(uint256 _numTokens) public view returns(uint256) {
+        // Gets the balance of the market
+        uint256 balance = collateralToken_.balanceOf(address(this));
+        // Performs the curve intergral with the relavant vaules
+        uint256 collateral = _curveIntegral(
+                _totalSupply.add(_numTokens)
+            ).sub(balance);
+        return collateral;
+    }
+
+    /**
+	  * @dev	Returns the required collateral amount for a volume of bonding
+	  *			curve tokens
+	  * @param	_numTokens: The number of tokens to work out the collateral
+	  *			vaule of
+      * @return uint256: The required collateral amount for a volume of bonding
+      *         curve tokens
+      */
+    function rewardForBurn(uint256 _numTokens) public view returns(uint256) {
+        // Gets the curent balance of the market
+        uint256 poolBalanceFetched = collateralToken_.balanceOf(address(this));
+        // Returns the pool balance minus the curve intergral of the removed
+        // tokens
+        return poolBalanceFetched.sub(
+            _curveIntegral(_totalSupply.sub(_numTokens))
+        );
+    }
+
+     /**
+      * @dev    Calculate the integral from 0 to x tokens supply. Calls the
+      *         curve integral function on the math library.
+      * @param  _x : The number of tokens supply to integrate to.
+      * @return he total supply in tokens, not wei.
+      */
+    function _curveIntegral(uint256 _x) internal view returns (uint256) {
+        return curveLibrary_.curveIntegral(_x);
+    }
+
+    /**
+      * @dev    Inverse integral to convert the incoming colateral value to
+      *         token volume.
+      * @param  _x : The volume to identify the root off
+      */
+    function _inverseCurveIntegral(uint256 _x) internal view returns(uint256) {
+        return curveLibrary_.inverseCurveIntegral(_x);
     }
 
 }
