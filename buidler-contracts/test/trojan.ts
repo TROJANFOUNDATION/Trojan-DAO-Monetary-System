@@ -1,15 +1,19 @@
 import { ethers } from "@nomiclabs/buidler";
 import chai from "chai";
 import { deployContract, getWallets, solidity } from "ethereum-waffle";
-import { parseEther, formatEther } from "ethers/utils"
+import { parseEther, formatEther, parseUnits } from "ethers/utils"
 
 import TrojanDaoArtifact from "../build/TrojanDao.json";
 import TrojanPoolArtifact from "../build/TrojanPool.json";
 import TrojanTokenArtifact from "../build/TrojanToken.json";
+import CurveFunctionsArtifact from "../build/CurveFunctions.json";
+import TokenMockArtifact from "../build/TokenMock.json";
 import { GuildBank } from "../typechain/GuildBank";
 import { TrojanDao } from "../typechain/TrojanDao";
 import { TrojanPool } from "../typechain/TrojanPool";
 import { TrojanToken } from "../typechain/TrojanToken";
+import { CurveFunctions } from "../typechain/CurveFunctions";
+import { TokenMock } from "../typechain/TokenMock";
 
 chai.use(solidity);
 
@@ -33,10 +37,19 @@ describe("Sparkle contract", function() {
   let trojanToken: TrojanToken;
   let trojanPool: TrojanPool;
   let guildBank: GuildBank;
+  let tokenMock: TokenMock;
+  let curveFunctions: CurveFunctions;
 
   beforeEach(async () => {
     // @ts-ignore
-    trojanToken = await deployContract(wallet, TrojanTokenArtifact);
+    tokenMock = await deployContract(wallet, TokenMockArtifact);
+    // @ts-ignore    
+    curveFunctions = await deployContract(wallet, CurveFunctionsArtifact);
+    // @ts-ignore    
+    trojanToken = await deployContract(wallet, TrojanTokenArtifact, [
+      curveFunctions.address,
+      tokenMock.address
+    ]);
 
     // TrojanDao constructor args
     // address summoner,
@@ -73,6 +86,15 @@ describe("Sparkle contract", function() {
 
   describe("Trojan", function() {
     it("Minting and burning of TROJ adds DAO tax", async function() {
+      const wethToMint = parseUnits("1000", 18);
+      const wethToDeposit = parseUnits("500", 18);
+
+      // mint weth token for addresses (testing purpose)
+      const wethDistributor = tokenMock.connect(wallet);
+      await wethDistributor.functions.mint(minter.address, wethToMint);
+      let minterWethBalance = await wethDistributor.functions.balanceOf(minter.address);
+      expect(minterWethBalance).to.eq(wethToMint);
+
       const summoner = await trojan.functions.members(wallet.address);
       expect(summoner.exists).to.be.true;
       expect(summoner.shares).to.eq(1);
@@ -87,17 +109,29 @@ describe("Sparkle contract", function() {
       expect(poolSharesStarting).to.eq(parseEther("1"));
       const poolTrojBalStarting = await trojanToken.functions.balanceOf(trojanPool.address);
       expect(poolTrojBalStarting).to.above(0)
-
-      // mint TROJ
+      
+      // approve token transfer to contract from sender
       const minterToken = trojanToken.connect(minter);
-      await minterToken.functions.mintTrojan({ value: parseEther("2") })
+      await minterToken.functions.approve(trojanToken.address, wethToDeposit); 
+      
+      // tokenResult is the amount of tokens to be minted when depositing collateral(wethToDeposit)
+      // priceToMint is the collateral needed to mint tokens(tokenResult)
+      // ! tokenResult should be equal to priceToMint, no ? Am I missing something there ?!
+      const tokenResult = await minterToken.functions.collateralToTokenBuying(wethToDeposit);
+      const priceToMint = await minterToken.functions.priceToMint(tokenResult);
+      console.log(tokenResult.toString());
+      console.log(priceToMint.toString());
+
+      
+      // mint TROJ
+      await minterToken.functions.mintTrojan(wethToDeposit)
       const minterTrojBalanceStarting = await minterToken.functions.balanceOf(minter.address);
       expect(minterTrojBalanceStarting).to.above(0);
 
       // check dao tax was received and shares were granted to the contract
       const daoTaxSharesAfterMint = await trojanPool.functions.donors(trojanToken.address);
       expect(daoTaxSharesAfterMint).to.above(0);
-
+      
       // burn TROJ
       await minterToken.functions.sellTrojan(minterTrojBalanceStarting);
       const minterTrojBalanceEnding = await minterToken.functions.balanceOf(minter.address);
