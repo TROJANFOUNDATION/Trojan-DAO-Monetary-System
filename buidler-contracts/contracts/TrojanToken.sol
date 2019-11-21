@@ -18,7 +18,7 @@ contract TrojanToken is ERC20Detailed {
     event DaoTax(uint256 amount);
 
     //uint256 public constant MAX_SUPPLY = 400000000 * 10 ** 18; // 40000 ETH of Sparkle
-    //uint256 public constant PERCENT = 100; // 100%
+    uint256 public constant PERCENT = 100; // 100%
     uint256 public constant MINT_TAX = 2; // 2%
     uint256 public constant BURN_TAX = 3; // 3%
     uint256 public constant TRANSFER_TAX = 1; // 1%
@@ -132,12 +132,28 @@ contract TrojanToken is ERC20Detailed {
     }
 
     function () external payable {
-        mintTrojan();
+        // mintTrojan();
     }
 
-    function mintTrojan() public payable returns (bool) {
+    function mintTrojan(uint256 amount) public payable returns (bool) {
         //uint256 amount = msg.value.mul(10 ** 18).div(COST_PER_TOKEN);
         //require(_totalSupply.add(amount) <= MAX_SUPPLY, "Max supply reached");
+
+        // Gets the price (in collateral) for the tokens
+        uint256 priceForTokens = priceToMint(amount);
+
+        // Ensures there is no overflow
+        require(priceForTokens > 0, "Tokens requested too low");
+
+        // Sends the collateral from the buyer to this market
+        require(
+            collateralToken_.transferFrom(
+                msg.sender,
+                address(this),
+                priceForTokens
+            ),
+            "Collateral transfer failed"
+        );
 
         uint256 taxAmount = amount.mul(MINT_TAX).div(PERCENT);
         uint256 buyerAmount = amount.sub(taxAmount);
@@ -164,10 +180,19 @@ contract TrojanToken is ERC20Detailed {
     function sellTrojan(uint256 amount) public returns (bool) {
         require(amount > 0 && balanceOf(msg.sender) >= amount, "Balance exceeded");
 
-        uint256 reward = amount.mul(COST_PER_TOKEN).div(10 ** 18);
+        //uint256 reward = amount.mul(COST_PER_TOKEN).div(10 ** 18);
+        uint256 reward = rewardForBurn(amount);
 
         uint256 taxAmount = reward.mul(BURN_TAX).div(PERCENT);
         uint256 sellerAmount = reward.sub(taxAmount);
+
+        require(
+            collateralToken_.transfer(
+                msg.sender,
+                sellerAmount
+            ),
+            "Tokens not sent"
+        );
 
         _balances[msg.sender] = balanceOf(msg.sender).sub(amount);
         _tobinsClaimed[msg.sender] = _tobinsCollected;
@@ -179,8 +204,6 @@ contract TrojanToken is ERC20Detailed {
 
         // deposit tax to trojan pool
         daoTax(taxAmount);
-
-        msg.sender.transfer(sellerAmount);
 
         emit Sell(msg.sender, amount);
 
@@ -210,8 +233,8 @@ contract TrojanToken is ERC20Detailed {
     {
         // Works out the inverse curve of the pool with the fee removed amount
         return _inverseCurveIntegral(
-            _curveIntegral(totalSupply_).add(_collateralTokenOffered)
-        ).sub(totalSupply_);
+            _curveIntegral(_totalSupply).add(_collateralTokenOffered)
+        ).sub(_totalSupply);
     }
 
     /**
@@ -227,9 +250,9 @@ contract TrojanToken is ERC20Detailed {
         returns(uint256)
     {
         return uint256(
-            totalSupply_.sub(
+            _totalSupply.sub(
                 _inverseCurveIntegral(
-                    _curveIntegral(totalSupply_).sub(_collateralTokenNeeded)
+                    _curveIntegral(_totalSupply).sub(_collateralTokenNeeded)
                 )
             )
         );
