@@ -10,7 +10,7 @@ import {
   TypedFunctionDescription
 } from ".";
 
-interface TrojanTokenInterface extends Interface {
+interface CollateralTokenInterface extends Interface {
   functions: {
     approve: TypedFunctionDescription<{
       encode([spender, value]: [string, BigNumberish]): string;
@@ -24,8 +24,8 @@ interface TrojanTokenInterface extends Interface {
       encode([spender, addedValue]: [string, BigNumberish]): string;
     }>;
 
-    sellTrojan: TypedFunctionDescription<{
-      encode([amount]: [BigNumberish]): string;
+    mint: TypedFunctionDescription<{
+      encode([account, amount]: [string, BigNumberish]): string;
     }>;
 
     decreaseAllowance: TypedFunctionDescription<{
@@ -35,31 +35,9 @@ interface TrojanTokenInterface extends Interface {
     transfer: TypedFunctionDescription<{
       encode([to, value]: [string, BigNumberish]): string;
     }>;
-
-    setTrojanPool: TypedFunctionDescription<{
-      encode([_trojanPool]: [string]): string;
-    }>;
-
-    mintTrojan: TypedFunctionDescription<{
-      encode([amount]: [BigNumberish]): string;
-    }>;
   };
 
   events: {
-    TrojanRedistribution: TypedEventDescription<{
-      encodeTopics([from, amount]: [null, null]): string[];
-    }>;
-
-    Mint: TypedEventDescription<{
-      encodeTopics([to, amount]: [null, null]): string[];
-    }>;
-
-    Sell: TypedEventDescription<{
-      encodeTopics([from, amount]: [null, null]): string[];
-    }>;
-
-    DaoTax: TypedEventDescription<{ encodeTopics([amount]: [null]): string[] }>;
-
     Transfer: TypedEventDescription<{
       encodeTopics([from, to, value]: [
         string | null,
@@ -78,35 +56,26 @@ interface TrojanTokenInterface extends Interface {
   };
 }
 
-export class TrojanToken extends Contract {
-  connect(signerOrProvider: Signer | Provider | string): TrojanToken;
-  attach(addressOrName: string): TrojanToken;
-  deployed(): Promise<TrojanToken>;
+export class CollateralToken extends Contract {
+  connect(signerOrProvider: Signer | Provider | string): CollateralToken;
+  attach(addressOrName: string): CollateralToken;
+  deployed(): Promise<CollateralToken>;
 
-  on(event: EventFilter | string, listener: Listener): TrojanToken;
-  once(event: EventFilter | string, listener: Listener): TrojanToken;
-  addListener(eventName: EventFilter | string, listener: Listener): TrojanToken;
-  removeAllListeners(eventName: EventFilter | string): TrojanToken;
-  removeListener(eventName: any, listener: Listener): TrojanToken;
+  on(event: EventFilter | string, listener: Listener): CollateralToken;
+  once(event: EventFilter | string, listener: Listener): CollateralToken;
+  addListener(
+    eventName: EventFilter | string,
+    listener: Listener
+  ): CollateralToken;
+  removeAllListeners(eventName: EventFilter | string): CollateralToken;
+  removeListener(eventName: any, listener: Listener): CollateralToken;
 
-  interface: TrojanTokenInterface;
+  interface: CollateralTokenInterface;
 
   functions: {
-    balanceOf(owner: string): Promise<BigNumber>;
-
-    priceToMint(_numTokens: BigNumberish): Promise<BigNumber>;
-
-    rewardForBurn(_numTokens: BigNumberish): Promise<BigNumber>;
-
-    collateralToTokenSelling(
-      _collateralTokenNeeded: BigNumberish
-    ): Promise<BigNumber>;
+    balanceOf(account: string): Promise<BigNumber>;
 
     allowance(owner: string, spender: string): Promise<BigNumber>;
-
-    collateralToTokenBuying(
-      _collateralTokenOffered: BigNumberish
-    ): Promise<BigNumber>;
 
     approve(
       spender: string,
@@ -127,7 +96,8 @@ export class TrojanToken extends Contract {
       overrides?: TransactionOverrides
     ): Promise<ContractTransaction>;
 
-    sellTrojan(
+    mint(
+      account: string,
       amount: BigNumberish,
       overrides?: TransactionOverrides
     ): Promise<ContractTransaction>;
@@ -144,36 +114,10 @@ export class TrojanToken extends Contract {
       overrides?: TransactionOverrides
     ): Promise<ContractTransaction>;
 
-    setTrojanPool(
-      _trojanPool: string,
-      overrides?: TransactionOverrides
-    ): Promise<ContractTransaction>;
-
-    mintTrojan(
-      amount: BigNumberish,
-      overrides?: TransactionOverrides
-    ): Promise<ContractTransaction>;
-
-    name(): Promise<string>;
     totalSupply(): Promise<BigNumber>;
-    MINT_TAX(): Promise<BigNumber>;
-    decimals(): Promise<number>;
-    tobinsCollected(): Promise<BigNumber>;
-    BURN_TAX(): Promise<BigNumber>;
-    symbol(): Promise<string>;
-    PERCENT(): Promise<BigNumber>;
-    TRANSFER_TAX(): Promise<BigNumber>;
   };
 
   filters: {
-    TrojanRedistribution(from: null, amount: null): EventFilter;
-
-    Mint(to: null, amount: null): EventFilter;
-
-    Sell(from: null, amount: null): EventFilter;
-
-    DaoTax(amount: null): EventFilter;
-
     Transfer(from: string | null, to: string | null, value: null): EventFilter;
 
     Approval(
@@ -197,7 +141,7 @@ export class TrojanToken extends Contract {
       addedValue: BigNumberish
     ): Promise<BigNumber>;
 
-    sellTrojan(amount: BigNumberish): Promise<BigNumber>;
+    mint(account: string, amount: BigNumberish): Promise<BigNumber>;
 
     decreaseAllowance(
       spender: string,
@@ -205,9 +149,5 @@ export class TrojanToken extends Contract {
     ): Promise<BigNumber>;
 
     transfer(to: string, value: BigNumberish): Promise<BigNumber>;
-
-    setTrojanPool(_trojanPool: string): Promise<BigNumber>;
-
-    mintTrojan(amount: BigNumberish): Promise<BigNumber>;
   };
 }
