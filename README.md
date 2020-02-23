@@ -42,4 +42,4 @@ This project demonstrates that the bonding curve based token can be used to auto
 * The UI needs to integrate the TrojanToken methods.
 
 ## Source code
-See source code for a proof of concept implementation on Ethereum using Solidity.
+See [source-code](../proof-of-concept.md) for a proof of concept implementation on Ethereum using Solidity.
