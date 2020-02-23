@@ -11,7 +11,7 @@ Furthermore, the method described can be forked and the depolyment parameters su
 
 ## Goals
 
-* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks.
+* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks and third parties.
 
 * Participants are incetivised to be involved / contribute through the DAO structure.
 
