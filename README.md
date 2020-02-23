@@ -30,7 +30,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 `TrojanToken.sol` is an ERC20-compliant token contract with a built-in bonding curve. This token is used as the "approved token" for the Trojan DAO main contract. TROJ tokens can be minted through the contract, which uses a bonding curve as an automated market maker.
 
-'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders.
+'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. We used "Sparkle" token in our example implementation.
 
 This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
 
@@ -41,7 +41,7 @@ This project demonstrates that the bonding curve based token can be used to auto
 * The TrojanToken contract can deposit funds into the Pool, but it cannot exit them. One way to exit the shares is by making a proxy contract that can receive a grant from the Trojan DAO and then call a function in the TrojanToken contract that will exit the funds.
 * The UI needs to integrate the TrojanToken methods.
 
-## Source code
+## Solidity proof of concept
 See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/master/buidler-contracts/contracts) for a proof of concept implementation on Ethereum using Solidity.
 
 ## Contracts
@@ -52,3 +52,13 @@ See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/maste
 [TrojanPool.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanPool.sol)
 
 [TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
+
+## Simulations
+Cad
+
+Scenarios simulated: mint, burn, and transfer.
+
+Further negative tests and edge case tests should be done.
+
+- [CADcad model](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/trojan_simulation.pyPegged token
+- [Readme](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/README.md)
