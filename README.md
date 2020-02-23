@@ -22,9 +22,9 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 * Anti-Speculative: The currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value.
 
-* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants. 
+* To enact new economic laws that could form the basis for a collaborative ecosystem. Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants. 
 
-* Autonomous and immutable: There is no central agency defining "monetary policy". There is no "killswitch".
+* Autonomous and immutable: There is no central agency defining "monetary policy". There is no "killswitch". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether, thus guaranteeing a minimum value for each token.
 
 Long Term vision:
 
@@ -34,7 +34,9 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 `TrojanToken.sol` is an ERC20-compliant token contract with a built-in bonding curve. This token is used as the "approved token" for the Trojan DAO main contract. TROJ tokens can be minted through the contract, which uses a bonding curve as an automated market maker. The smart contract accumulates Ether when participants mint the token and it distributes Ether when participants burn it.  
 
-'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. We used "Sparkle" token in our example implementation.
+'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. 
+
+In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL), with the significant imrpovement of having the token's taxes directed to a DAO (DAO tax) to be governed collectively so as to be directed towards projects of mutual interest, rather than being directed to an individual's account.   
 
 This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
 
