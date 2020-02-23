@@ -4,4 +4,4 @@ The proof of concept is written in Solidity.
 
 ## Contracts
 
-Trojan Token[contract](contracts/PeggedToken.sol)
+TrojanToken[contract](contracts/PeggedToken.sol)
