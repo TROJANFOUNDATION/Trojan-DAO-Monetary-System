@@ -76,6 +76,6 @@ Further negative tests and edge case tests need to be done.
 * The `TrojanDao.sol` contract depends on the `TrojanToken.sol` contract, which depends on the `TrojanPool.sol` contract, which depends on the `TrojanDao.sol` contract. To work around this circular dependency, we had to add a `setTrojanPool` function. This is horrible for security purposes.
 * The `TrojanToken.sol` contract needed to bootstrap the creator with tokens, in order to make testing easier. This should also be fixed for production.
 * The TrojanToken contract can deposit funds into the Pool, but it cannot exit them. One way to exit the shares is by making a proxy contract that can receive a grant from the Trojan DAO and then call a function in the TrojanToken contract that will exit the funds.
-* The UI needs to integrate the TrojanToken methods.
+* The UI of the DAO (Moloch fork) needs to integrate the TrojanToken methods.
 * Explore the possibility of altering the “redistribution tax” code so that this amount is spread evenly between holders rather than relative to holdings (more like a "UBI").
 * Run more robust tests with cadCAD, using the results to fine-tune the “tax policies” of the token.
