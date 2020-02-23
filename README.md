@@ -63,4 +63,4 @@ Further negative tests and edge case tests need to be done.
 - [CADcad model](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/trojan_simulation.py)
 - [Readme](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/README.md)
 
-![individual-mint-burn-trojan-simulation](mint-burn-graph.png)
+![individual-mint-burn-trojan-simulation](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/mint-burn-graph.png)
