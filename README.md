@@ -27,7 +27,7 @@ Furthermore, the method described can be forked and the depolyment parameters ad
 
 Long Term vision:
 
-Art invades finance - Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems, encoding shared values. Economic-systems-as-artworks.
+Art invades finance - Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems, encoding shared values.
 
 ## Contract Structure
 
