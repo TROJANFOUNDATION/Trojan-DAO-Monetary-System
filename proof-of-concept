@@ -4,6 +4,10 @@ The proof of concept is written in Solidity.
 
 ## Contracts
 
-TrojanToken: https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol
+https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/master/buidler-contracts/contracts
 
-- System [contract](contracts/System.sol)
+## CADCad Tests
+
+https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/master/cadCAD_simulation
+
+
