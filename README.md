@@ -37,7 +37,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is collected by a DAO so as to be directed by the participants towards projects of mutual benefit, rather than being directed to any one individual's eth account.  
 
-This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
+This project demonstrates that the bonding curve based token deployed together with a modified version of MolochPool.sol can be used to automatically grant a Moloch DAO with funding through the minting and burning of the token.
 
 
 ## Solidity proof of concept
