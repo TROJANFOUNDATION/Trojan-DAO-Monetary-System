@@ -44,8 +44,8 @@ This project demonstrates that the bonding curve based token can be used to auto
 ## Source code
 See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/master/buidler-contracts/contracts) for a proof of concept implementation on Ethereum using Solidity.
 
-## Contreacts
-*[GuildBank.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/GuildBank.sol)
-*[TrojanDAO.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanDao.sol)
-*[TrojanPool.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanPool.sol)
-*[TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
+## Contracts
+[GuildBank.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/GuildBank.sol)
+[TrojanDAO.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanDao.sol)
+[TrojanPool.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanPool.sol)
+[TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
