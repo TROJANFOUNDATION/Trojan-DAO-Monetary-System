@@ -4,15 +4,15 @@ README
 
 ## Motivation
 
-This research and development project envisions and describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance, without the constraints of banks. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to be fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". A currency that is not "bought" or "sold" but rather it is participated in.
+This research and development project envisions and describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance, without the constraints of banks. Tokens are contributed to a communal pool governed by the DAO whenever the token is minted from the smart contract or transferred from one address to a different address. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to be fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". A currency that is not "bought" or "sold" but rather it is participated in.
 
-Furthermore, the method described can be forked and the depolyment parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs. 
+Furthermore, the method described can be forked and the depolyment parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs, and be used to develop other novel crypto-economic experiments and use-cases.
 
 https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/edit?usp=sharing
 
 ## Goals
 
-* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders.
+* Provides an alternative: Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks.
 
 * Participants are incetivised to be involved / contribute through the DAO structure.
 
@@ -20,7 +20,11 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 * Used in community events and activities.
 
+* Anti-Speculative: The currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value.
+
 * Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants. 
+
+* Autonomous and immutable: There is no central agency defining "monetary policy". There is no "killswitch".
 
 Long Term vision:
 
@@ -28,7 +32,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 ## Contract Structure
 
-`TrojanToken.sol` is an ERC20-compliant token contract with a built-in bonding curve. This token is used as the "approved token" for the Trojan DAO main contract. TROJ tokens can be minted through the contract, which uses a bonding curve as an automated market maker.
+`TrojanToken.sol` is an ERC20-compliant token contract with a built-in bonding curve. This token is used as the "approved token" for the Trojan DAO main contract. TROJ tokens can be minted through the contract, which uses a bonding curve as an automated market maker. The smart contract accumulates Ether when participants mint the token and it distributes Ether when participants burn it.  
 
 'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. We used "Sparkle" token in our example implementation.
 
