@@ -1,6 +1,6 @@
 # 
 
-Trojan DAO
+README
 
 ## Motivation
 
