@@ -23,7 +23,7 @@ Furthermore, the method described can be forked and the depolyment parameters su
 
 * Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants, and between participants and the "outside world". 
 
-* Autonomous and immutable: There is no "killswitch". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether, thus guaranteeing a minimum value for each token.
+* Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens, thus guaranteeing a minimum value for each token.
 
 Long Term vision:
 
