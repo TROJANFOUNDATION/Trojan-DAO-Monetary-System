@@ -70,3 +70,5 @@ Further negative tests and edge case tests need to be done.
 [Schematic-diagram](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/Proposal%20Process%20-%20Trojan%20DAO.pdf) 
 
 [CAD-System-definition](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/CAD%20System%20Definition%20-%20Trojan%20DAO.pdf)
+
+[Differential equations for mint, burn and transfer scenarios](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/Differential-equations.pdf)
