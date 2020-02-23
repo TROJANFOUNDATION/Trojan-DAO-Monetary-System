@@ -12,7 +12,7 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 ## Goals
 
-* Provides an alternative: Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks.
+* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks.
 
 * Participants are incetivised to be involved / contribute through the DAO structure.
 
