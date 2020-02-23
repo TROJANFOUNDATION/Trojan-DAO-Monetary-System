@@ -27,7 +27,7 @@ Furthermore, the method described can be forked and the depolyment parameters su
 
 Long Term vision:
 
-Art invades finance - Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems, encoding shared values.
+Art invades finance - Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values.
 
 ## Contract Structure
 
@@ -37,7 +37,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is sent automatically to a DAO so as to be directed by the participants towards projects of mutual benefit, rather than being directed to any one individual's ethereum account.  
 
-This project demonstrates that the bonding curve based token deployed together with a modified version of MolochPool.sol can be used to automatically grant a Moloch DAO with funding through the minting and burning of the token.
+This project demonstrates that the bonding curve based token deployed together with a modified version of MolochPool.sol can be used to automatically grant a Moloch DAO with additional funding through the minting and burning of the token.
 
 
 ## Solidity proof of concept
