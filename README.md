@@ -8,7 +8,6 @@ This research and development project envisions and describes an easy-to-use com
 
 Furthermore, the method described can be forked and the depolyment parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs, and be used to develop other novel crypto-economic experiments and use-cases.
 
-https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/edit?usp=sharing
 
 ## Goals
 
