@@ -12,15 +12,15 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 ## Goals
 
-Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals.
+* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders.
 
-Participants are incetivised to be involved / contribute through the DAO structure.
+* Participants are incetivised to be involved / contribute through the DAO structure.
 
-Provide a source of revenue for the DAO through the economic activities that its currency generates, via "DAO tax".
+* Provide a source of revenue for the DAO through the economic activities that its currency generates, via "DAO tax".
 
-Used in community events and activities.
+* Used in community events and activities.
 
-Making the flow of capital more efficient through the system unlocks economic value and benefits all stakeholders. Creating a circular economy between participants. 
+* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants. 
 
 Long Term vision:
 
