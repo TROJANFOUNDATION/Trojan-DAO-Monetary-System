@@ -36,7 +36,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. 
 
-In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL), with the significant imrpovement of having the token's taxes directed to a DAO (DAO tax) to be governed collectively so as to be directed towards projects of mutual interest, rather than being directed to an individual's account.   
+In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL), with the significant imrpovement of having the revenue generated through the token's taxes be governed collectively through a DAO so as to be directed towards projects of mutual interest, rather than being directed to any individual's account.   
 
 This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
 
