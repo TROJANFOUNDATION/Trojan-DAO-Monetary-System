@@ -46,6 +46,9 @@ See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/maste
 
 ## Contracts
 [GuildBank.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/GuildBank.sol)
+
 [TrojanDAO.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanDao.sol)
+
 [TrojanPool.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanPool.sol)
+
 [TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
