@@ -40,3 +40,6 @@ This project demonstrates that the bonding curve based token can be used to auto
 * The `TrojanToken.sol` contract needed to bootstrap the creator with tokens, in order to make testing easier. This should also be fixed for production.
 * The TrojanToken contract can deposit funds into the Pool, but it cannot exit them. One way to exit the shares is by making a proxy contract that can receive a grant from the Trojan DAO and then call a function in the TrojanToken contract that will exit the funds.
 * The UI needs to integrate the TrojanToken methods.
+
+## Source code
+See source code for a proof of concept implementation on Ethereum using Solidity.
