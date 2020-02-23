@@ -35,7 +35,7 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 'TrojanPool.sol' is a modified version of Moloch's Pool contract, a follow-on funding contract that mirrors the investments of the DAO. In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. 
 
-In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is collected by a DAO so as to be directed by the participants towards projects of mutual interest, rather than being directed to any one individual's eth account.  
+In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is collected by a DAO so as to be directed by the participants towards projects of mutual benefit, rather than being directed to any one individual's eth account.  
 
 This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
 
