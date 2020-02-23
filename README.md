@@ -6,7 +6,7 @@ README
 
 This research and development project envisions and describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance, without the constraints of banks. Tokens are contributed to a communal pool governed by the DAO (TrojanPool.sol) whenever the token is minted from the smart contract or transferred from one address to a different address. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to be fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". A currency that is not "bought" or "sold" but rather it is participated in.
 
-Furthermore, the method described can be forked and the depolyment parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs, and be used to develop other novel crypto-economic experiments and use-cases.
+Furthermore, the method described can be forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs,  in the spirit of "Aragon Fundraising", and can also be used to develop other novel crypto-economic experiments and use-cases.
 
 
 ## Goals
@@ -19,7 +19,7 @@ Furthermore, the method described can be forked and the depolyment parameters ad
 
 * Used in community events and activities.
 
-* Anti-Speculative: The currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value.
+* Anti-Speculative: In our implementation, the currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value. Future implementations can chose to deploy with different bonding curve parameters, such as in the case for BC fundraising scenarios.
 
 * Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants, and between participants and the "outside world". 
 
