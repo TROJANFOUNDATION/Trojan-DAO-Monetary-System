@@ -1,3 +1,7 @@
 # Solidity proof of concept
 
-The proof of concept is written in Solidity, 
+The proof of concept is written in Solidity.
+
+## Contracts
+
+[TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
