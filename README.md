@@ -67,4 +67,4 @@ Further negative tests and edge case tests need to be done.
 
 ## Documentation
 
-![Schematic-diagram](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/Proposal%20Process%20-%20Trojan%20DAO.pdf) 
+[Schematic-diagram](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/Proposal%20Process%20-%20Trojan%20DAO.pdf) 
