@@ -4,4 +4,6 @@ The proof of concept is written in Solidity.
 
 ## Contracts
 
-TrojanToken[contract](contracts/PeggedToken.sol)
+TrojanToken: https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol
+
+- System [contract](contracts/System.sol)
