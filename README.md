@@ -22,13 +22,13 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 * Anti-Speculative: The currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value.
 
-* To enact new economic laws that could form the basis for a collaborative ecosystem. Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants. 
+* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants, and between participants and the "outside world". 
 
 * Autonomous and immutable: There is no central agency defining "monetary policy". There is no "killswitch". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether, thus guaranteeing a minimum value for each token.
 
 Long Term vision:
 
-Art invades finance - Using blockchain technology, artists involved should be able to exchange value between their communities without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating financial systems.
+Art invades finance - Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating financial systems.
 
 ## Contract Structure
 
