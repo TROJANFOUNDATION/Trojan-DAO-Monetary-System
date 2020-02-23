@@ -24,7 +24,7 @@ https://docs.google.com/document/d/1hijSZrzoXS27cmFbjqwUJ-Oh4uBvS-kV6sIw9NJPbns/
 
 * Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants, and between participants and the "outside world". 
 
-* Autonomous and immutable: There is no central agency defining "monetary policy". There is no "killswitch". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether, thus guaranteeing a minimum value for each token.
+* Autonomous and immutable: There is no "killswitch". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether, thus guaranteeing a minimum value for each token.
 
 Long Term vision:
 
