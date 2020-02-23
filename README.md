@@ -4,7 +4,7 @@ Trojan DAO
 
 ## Motivation
 
-This research and development project envisions and describes a viable system that offers a dependable and easy-to-use community-specific digital currency, that users can mint, burn, and hold, and participate in its governance, without the constraints of banks. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to by fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". 
+This research and development project envisions and describes an easy-to-use community-specific digital currency, that is governed through a Moloch-type DAO. Users can mint, burn, and hold, and participate in its governance, without the constraints of banks. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to by fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". 
 
 Furthermore, the method described can be forked and the parameters changed so as to create a fundraising mechanism for Moloch-type DAOs. 
 
