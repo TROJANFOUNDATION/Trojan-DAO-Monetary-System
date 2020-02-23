@@ -52,8 +52,8 @@ See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/maste
 
 [TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
 
-## Simulations
-CadCAD simulation
+## Token-economic Simulations
+CadCAD simulations
 
 Scenarios simulated: mint, burn, and transfer.
 
