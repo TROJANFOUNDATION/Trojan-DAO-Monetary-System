@@ -42,4 +42,4 @@ This project demonstrates that the bonding curve based token can be used to auto
 * The UI needs to integrate the TrojanToken methods.
 
 ## Source code
-See [source-code](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/proof-of-concept) for a proof of concept implementation on Ethereum using Solidity.
+See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/master/buidler-contracts/contracts) for a proof of concept implementation on Ethereum using Solidity.
