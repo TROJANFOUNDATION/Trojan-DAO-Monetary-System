@@ -18,6 +18,8 @@ Allow stakeholders to participate in the governance of the currency through a DA
 
 Provide a source of revenue for the DAO through the economic activities that its currency generates, via "DAO tax".
 
+Used in community events and activities.
+
 Making the flow of capital more efficient through the system unlocks economic value and benefits all stakeholders. Creating a circular economy between participants. 
 
 Long Term vision:
