@@ -34,9 +34,9 @@ Art invades finance - Using blockchain technology, artists involved should be ab
 
 `TrojanToken.sol` is an ERC20-compliant token contract with a built-in bonding curve. This token is used as the "approved token" for the Trojan DAO main contract. TROJ tokens can be minted through the contract, which uses a bonding curve as an automated market maker. The smart contract accumulates Ether when participants mint the token and it distributes Ether when participants burn it.  
 
-'TrojanPool.sol' In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool, a follow-on funding contract that mirrors the investments of the Trojan DAO. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. 
+'TrojanPool.sol' is a modified version of Moloch's Pool contract, a follow-on funding contract that mirrors the investments of the DAO. In our example implementation, the minting process is subject to a 2% DAO tax, where the tax amount is deposited into the Trojan Pool. Burning tokens similarly is taxed 3% to the DAO. Transfers of the token are subject to a 1% "redistribution" tax, whereby the tax is redistributed to all the token holders. 
 
-In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is collected by a DAO so as to be directed by the participants towards projects of mutual interest, rather than being directed to any one individual's account.  
+In our example implementation, we built off the "Sparkle" token, which in turn was inspired by Bomb Token (BOMB) and Ampleforth (AMPL). Our implementation represents a significant imrpovement from the above: the revenue generated through the token's taxes is collected by a DAO so as to be directed by the participants towards projects of mutual interest, rather than being directed to any one individual's eth account.  
 
 This project demonstrates that the bonding curve based token can be used to automatically grant the DAO with funding when it is minted and burned.
 
