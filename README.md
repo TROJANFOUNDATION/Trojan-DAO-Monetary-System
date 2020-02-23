@@ -54,11 +54,13 @@ See [source-code](https://github.com/diffusioncon/Trojan-DAO-Ethereum/tree/maste
 [TrojanToken.sol](https://github.com/diffusioncon/Trojan-DAO-Ethereum/blob/master/buidler-contracts/contracts/TrojanToken.sol)
 
 ## Simulations
-Cad
+CadCAD simulation
 
 Scenarios simulated: mint, burn, and transfer.
 
-Further negative tests and edge case tests should be done.
+Further negative tests and edge case tests need to be done.
 
-- [CADcad model](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/trojan_simulation.pyPegged token
+- [CADcad model](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/trojan_simulation.py)
 - [Readme](https://github.com/TROJANFOUNDATION/Trojan-DAO-Monetary-System/blob/master/cadCAD_simulation/README.md)
+
+![individual-mint-burn-trojan-simulation](mint-burn-graph.png)
