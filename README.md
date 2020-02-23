@@ -6,7 +6,7 @@ README
 
 This research and development project envisions and describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance, without the constraints of banks. Tokens are contributed to a communal pool governed by the DAO (TrojanPool.sol) whenever the token is minted from the smart contract or transferred from one address to a different address. The proposed implementation would operate on a public blockchain and would be backed by Ether. The system is meant to be fully decentralized, and participatory, and operate on-chain without any need for a centralised point of control. If the Trojan DAO is a "bank-as-performance" then its currency is its "currency-as-performance". A currency that is not "bought" or "sold" in the conventional sense but rather it is participated in.
 
-Furthermore, the method described can be forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs, Continuous Organizations, and can also be used to develop other novel crypto-economic experiments and use-cases.
+Furthermore, the method described can be forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to the scenario of creating a fundraising mechanism for Moloch-fork DAOs, or Continuous Organizations, and can also be used to develop other novel crypto-economic experiments and use-cases.
 
 
 ## Goals
