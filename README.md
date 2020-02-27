@@ -21,13 +21,13 @@ Furthermore, the method described can be forked and the depolyment parameters su
 
 * Anti-Speculative: In our implementation, the currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value. Future implementations can chose to deploy with different bonding curve parameters, such as in the case for BC fundraising scenarios.
 
-* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all stakeholders. Creating a circular economy between participants, and between participants and the "outside world". 
+* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all participants. Creating a circular economy between participants, and between participants and the "outside world". 
 
 * Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens, thus guaranteeing a minimum value for each token.
 
 Long Term vision:
 
-Using blockchain technology, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values.
+Many forms of creative expression, such as art or writing, are not pursued because only the most successful artists or writers can generate a self-sustaining income. Creating a redistributive and participatory community currency for art practices, governed through a DAO, artists involved should be able to exchange value between communities and sustain collaborative practices without the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values.
 
 ## Contract Structure
 
