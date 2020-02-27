@@ -6,7 +6,7 @@ README
 
 This research and development project describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance. An amount of tokens is allocated automatically to a communal pool governed by the DAO (TrojanPool.sol) whenever the token is minted from the smart contract or transferred from one address to a different address, as "DAO tax". Additionally the token contract implements a "redistribution tax" that is awarded to all token holders. The proposed implementation would operate on a public blockchain and would be backed by Ether. 
 
-Furthermore, the method described can be forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to scenarios such as creating a fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
+Furthermore, the method described can be considered a "DAO primitive" that can forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to scenarios such as creating a BC fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
 
 
 ## Goals
