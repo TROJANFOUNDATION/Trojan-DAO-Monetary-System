@@ -25,7 +25,7 @@ Furthermore, the mechanism described can be considered a "DAO primitive" that ca
 
 * Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens, thus guaranteeing a minimum value for each token.
 
-###Long Term vision:
+## Long Term vision:
 
 In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Similarly to other open-source community projects, art practices that engage in the social sphere are an example of unpaid work that has great societal value. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
 
