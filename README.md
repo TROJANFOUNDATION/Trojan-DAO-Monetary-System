@@ -27,7 +27,7 @@ Furthermore, the method described can be forked and the depolyment parameters su
 
 Long Term vision:
 
-Many forms of creative expression, are not pursued because only the most successful artists or writers can generate a self-sustaining income. Similarly to other open-source community projects, art practices that engage in the social sphere are an example of unpaid work that has great societal value. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
+In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Similarly to other open-source community projects, art practices that engage in the social sphere are an example of unpaid work that has great societal value. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
 
 ## Contract Structure
 
