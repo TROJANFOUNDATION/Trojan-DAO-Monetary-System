@@ -2,22 +2,30 @@
 
 README
 
+## Description
+
+
+This research and development project describes a method to create a decentralized and transparently backed credit system as a community-specific digital currency with is governed through a Moloch-fork DAO. Users can mint, burn, and hold the currency and participate in its governance by voting on decisions concerning the allocation / distribution of funds generated via "DAO Tax". 
+
+The proposed implementation would operate on a public blockchain and would be backed by Ether. The community currency is 100% backed by reserves, in this case ETH, which are locked into a verified on-chain collateral - The reserve is leveraged into a credit supply, which automatically mints new tokens via a bonding curve smart-contract, a concept originally developed by Eyal Hertzog which he calls the Bancor Protocol. These tokens are essentially a share of the common's economy using them.
+
+We included a "DAO Tax" implementation to the token contract. Whenever the token is minted from the token's smart contract or transferred between addresses, an amount of tokens is allocated automatically to a communal pool which governed by the DAO (TrojanPool.sol). the token contract also implements a "redistribution tax", a similar mechanism that awards all token holders.
+
 ## Motivation
+Collaborative networks of artist-run, creative communities, and non-commercial initiatives that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. However, such initiatives struggle to achieve sustainable methods to support their practices despite having active and dedicated communities who care. As a result, an entire field of artstic production is dependent on donations as the primary method for community funding. Simply put, donations are a broken system for funding artistic and activist causes sustainably. Donations aren’t a sustainable community funding method because they are made at a loss to the individual and only incentivized by an individual's value of that social good/cause. As a result, community members are always coming out at a loss, and the the work being collectively generated suffers from depreciation. Since most people don't donate, funding for artistic practices and social-good funding is thus limited to centralized funding sources (i.e. governments, foundations, wealthy individual benefactors). Top-down cultural policies, that are defined by groups of bureaucrats, are not working to support or sustain creative communities - rather they are extractive. The underfunding and privatization of art as a public goods has led to an unsustainable community funding model. 
 
-This research and development project describes an easy-to-use community-specific digital currency, that is governed through a Moloch-fork DAO. Users can mint, burn, and hold, and participate in its governance. An amount of tokens is allocated automatically to a communal pool governed by the DAO (TrojanPool.sol) whenever the token is minted from the smart contract or transferred from one address to a different address, as "DAO tax". Additionally the token contract implements a "redistribution tax" that is awarded to all token holders. The proposed implementation would operate on a public blockchain and would be backed by Ether. 
-
-Furthermore, the mechanism described can be considered a "DAO primitive" that can forked and the depolyment parameters such as % DAO tax and Bonding Curve parameters adapted to scenarios such as creating a BC fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
+Furthermore, the mechanism we describe can be considered a "DAO primitive" that can forked and the depolyment parameters such as % "DAO Tax" and Bonding Curve parameters adapted to scenarios such as creating a BC fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
 
 
 ## Goals
 
-* Provide creative communities with a usable digital currency based on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks and third parties.
+* Provide creative communities with a usable digital currency built on blockchain technology, as a means of fuelling shared goals and exchanging resources across borders without the mediation of banks and third parties.
 
 * Participants are incetivised to be involved / contribute through the DAO structure.
 
 * Provide a source of revenue for the DAO through the economic activities that its currency generates, via "DAO tax".
 
-* Used in community events and activities.
+* Used in community events and activities, and interactions between communities.
 
 * Anti-Speculative: In our implementation, the currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value. Future implementations can chose to deploy with different bonding curve parameters, such as in the case for BC fundraising scenarios.
 
@@ -27,7 +35,7 @@ Furthermore, the mechanism described can be considered a "DAO primitive" that ca
 
 ## Long Term vision:
 
-In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Similarly to other open-source community projects, art practices that engage in the social sphere are an example of unpaid work that has great societal value. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
+In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
 
 ## Contract Structure
 
