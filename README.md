@@ -9,7 +9,7 @@ This research and development project describes a method to create a decentraliz
 
 The proposed implementation would operate on a public blockchain and would be backed by Ether. The community currency is 100% backed by reserves, in this case ETH, which are locked into a verified on-chain collateral - The reserve is leveraged into a credit supply, which automatically mints new tokens via a bonding curve smart-contract, a concept originally developed by Eyal Hertzog which he calls the Bancor Protocol. These tokens are essentially a share of the common's economy using them.
 
-We included a "DAO Tax" implementation to the token contract. Whenever the token is minted from the token's smart contract or transferred between addresses, an amount of tokens is allocated automatically to a communal pool which governed by the DAO (TrojanPool.sol). the token contract also implements a "redistribution tax", a similar mechanism that awards all token holders.
+We included a "DAO Tax" implementation to the token contract. Whenever the token is minted from the token's smart contract or transferred between addresses, an amount of tokens is allocated automatically to a community pool which governed by the DAO (TrojanPool.sol). the token contract also implements a "redistribution tax", a similar mechanism that awards all token holders.
 
 ## Motivation
 Collaborative networks of artist-run, creative communities, and non-commercial initiatives that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. This is certainly the case for Athens, where the recent past of capital controls and economic uncertainties has led to the closing-down of commercial gallery spaces and the emergence of collaborative networks of support between artist-organised intiatives. However, such initiatives struggle to achieve sustainable methods to support their practices despite having active and dedicated communities who care. The underfunding and privatization of art as a public goods has led to an unsustainable community funding model. 
@@ -35,7 +35,7 @@ Furthermore, the mechanism we describe can be considered a "DAO primitive" that 
 
 ## Long Term vision:
 
-In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Redistributive and participatory community currencies could help reward and sustain these valuable resources. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
+In the conditions of today's market-driven global art economy, only the most successful artists afford to sustain their practices. Redistributive and participatory community currencies could help reward collaborative practices and sustain the resources that we share. Artists involved should be able to exchange value between communities and sustain collaborative practices outside the restraints of national borders and capital controls, and without the interference of banks, due to the significant efficiency unlocked in building and operating crypto-economical systems that encode shared values and the pursuit of common goals.
 
 ## Contract Structure
 
