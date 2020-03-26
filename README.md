@@ -25,8 +25,6 @@ Furthermore, the mechanism we describe can be considered a "DAO primitive" that 
 
 * Provide a source of revenue for the DAO through the economic activities that its currency generates, via "DAO tax".
 
-* Used in community events and activities, and interactions between communities.
-
 * Anti-Speculative: In our implementation, the currency value is pegged to ETH, is backed by a verifiable reserve of ETH that guarantees a minimum value. Future implementations can chose to deploy with different bonding curve parameters, such as in the case for BC fundraising scenarios.
 
 * Making the flow of capital more efficient through the system unlocks collaborative value and benefits all participants. Creating a circular economy between participants, and between participants and the "outside world". 
