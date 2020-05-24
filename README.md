@@ -1,4 +1,4 @@
-1st place in the Token Engineering Track and Silver Overall 🏆 at [Diffusion 2019](https://medium.com/@Angela.Kreitenweis/tokenengineering-at-diffusion-berlin-e59b9e38b060) 
+1st place in the Token Engineering Track and Silver Overall 🏆 at [Diffusion October 2019](https://medium.com/@Angela.Kreitenweis/tokenengineering-at-diffusion-berlin-e59b9e38b060) 
 
 README
 
