@@ -5,7 +5,7 @@ README
 ## Description
 
 
-This research and development project describes a method to create a decentralized and transparently backed credit system. The motivation for buiding this token-economic system is to create a redistributive, community governed "social currency" for art projects, starting from an Athenean network of participants. Users can mint, burn, and hold the currency and participate in its governance by voting on decisions concerning the allocation / distribution of funds generated via "DAO Tax". 
+This research and development project describes a method to create a decentralized and transparently backed credit system. The motivation for buiding this token-economic system is to create a redistributive, community governed "social currency" for art projects. Users can mint, burn, and hold the currency and participate in its governance by voting on decisions concerning the allocation / distribution of funds generated via "DAO Tax". 
 
 The proposed implementation would operate on a public blockchain and would be backed by Ether - The reserve is leveraged into a credit supply, which automatically mints new tokens via a bonding curve smart-contract, a concept originally developed by Eyal Hertzog which he calls the Bancor Protocol. These tokens are essentially a share of the common's economy using them.
 
