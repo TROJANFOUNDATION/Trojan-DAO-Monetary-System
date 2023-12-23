@@ -78,5 +78,3 @@ Further negative tests and edge case tests need to be done.
 * The UI of the DAO (Moloch fork) needs to integrate the TrojanToken methods.
 * Explore the possibility of altering the “redistribution tax” code so that this amount is spread evenly between holders rather than relative to holdings (more like a "UBI").
 * Run more robust tests with cadCAD, using the results to fine-tune the “tax policies” of the token.
-
-This open-source project is currently accepting funding via a gitcoin Grant: (https://gitcoin.co/grants/359/trojan-dao-inifinite-moloch)
