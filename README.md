@@ -22,7 +22,7 @@ Furthermore, the mechanism we describe can be considered a "DAO primitive" that 
 ## Goals
 
 * Making the flow of capital more efficient through the system unlocks collaborative value, creating a regererative ecosystem.
-* Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens, thus guaranteeing a minimum value for each token.
+* Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens.
 
 ## Long Term vision:
 
