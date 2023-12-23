@@ -5,27 +5,28 @@ README
 ## Description
 
 
-This research and development project describes a method to create a decentralized and transparently backed credit system. The motivation for buiding this token-economic system is to create a redistributive, community governed "social currency" for art projects. Users can mint, burn, and hold the currency and participate in its governance by voting on decisions concerning the allocation / distribution of funds generated via "DAO Tax". 
+Playing with Moloch DAO with a Bonding Curve Pool token.
+
+Users can mint, burn, and hold the currency and participate in its governance by voting on decisions concerning the allocation / distribution of funds generated via "DAO Tax". 
 
 The proposed implementation would operate on a public blockchain and would be backed by Ether - The reserve is leveraged into a credit supply, which automatically mints new tokens via a bonding curve smart-contract, a concept originally developed by Eyal Hertzog which he calls the Bancor Protocol. These tokens are essentially a share of the common's economy using them.
 
 We included a "DAO Tax" implementation to the token contract. Whenever the token is minted from the token's smart contract or transferred between addresses, an amount of tokens is allocated automatically to a community pool which governed by the DAO (TrojanPool.sol). the token contract also implements a "redistribution tax", a similar mechanism that awards all token holders.
 
 ## Motivation
-Collaborative networks of artist-run, creative communities, and non-commercial initiatives that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. However, such initiatives struggle to achieve sustainable methods to support their practices despite having active and dedicated communities who care. The underfunding and privatization of art has led to an unsustainable community funding model. 
+Collaborative networks of artist-run, creative communities, and non-commercial initiatives that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. However, such initiatives struggle to achieve sustainable methods to support their practices despite having active and dedicated communities who care. 
 
 Furthermore, the mechanism we describe can be considered a "DAO primitive" that can forked and the depolyment parameters such as % "DAO Tax" and Bonding Curve parameters adapted to scenarios such as creating a BC fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
 
 
 ## Goals
 
-* Making the flow of capital more efficient through the system unlocks collaborative value and benefits all participants. Creating a circular economy between participants, and between participants and the "outside world". 
-
+* Making the flow of capital more efficient through the system unlocks collaborative valu, creating a regererative ecosystem.
 * Autonomous and immutable: There is no "killswitch" or "backdoor". The only way to withdraw Ether from the smart contract is to burn the token. The creator, nor anybody else, can ever access this reserve pool of ether unless burning tokens, thus guaranteeing a minimum value for each token.
 
 ## Long Term vision:
 
-Today, only the most successful artists afford to sustain their practices. Redistributive and participatory systems built on blockchain technologies could help reward collaborative practices and improve the resources that we share, encoding shared values and the pursuit of common goals.
+Redistributive and participatory systems built on blockchain technologies could help reward collaborative practices and improve the resources that we share, encoding shared values and the pursuit of common goals.
 
 ## Contract Structure
 
