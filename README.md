@@ -14,7 +14,7 @@ The proposed implementation would operate on a public blockchain and would be ba
 We included a "DAO Tax" implementation to the token contract. Whenever the token is minted from the token's smart contract or transferred between addresses, an amount of tokens is allocated automatically to a community pool which governed by the DAO (TrojanPool.sol). the token contract also implements a "redistribution tax", a similar mechanism that awards all token holders.
 
 ## Motivation
-Collaborative networks of artist-run, creative communities, and non-commercial initiatives that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. However, such initiatives struggle to achieve sustainable methods to support their practices despite having active and dedicated communities who care. 
+Creative communities that operate outside institutional frameworks provide an important ground for experimentation, innovation and artistic expression. However, such initiatives struggle to achieve sustainability despite having active and dedicated communities who care. 
 
 Furthermore, the mechanism we describe can be considered a "DAO primitive" that can forked and the depolyment parameters such as % "DAO Tax" and Bonding Curve parameters adapted to scenarios such as creating a BC fundraising mechanism for Moloch-fork DAOs, or Moloch x Continuous Organizations, and other novel crypto-economic experiments and use-cases.
 
@@ -26,7 +26,7 @@ Furthermore, the mechanism we describe can be considered a "DAO primitive" that 
 
 ## Long Term vision:
 
-Redistributive and participatory systems built on blockchain technologies could help reward collaborative practices and improve the resources that we share, encoding shared values and the pursuit of common goals.
+Redistributive and participatory ecosystems built on blockchain technologies could help reward collaborative practices and improve the resources that we share, encoding shared values and the pursuit of common goals.
 
 ## Contract Structure
 
